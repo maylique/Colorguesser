@@ -54,9 +54,16 @@ const resetFuncAndRandomizer = () => {
 }
 reset.addEventListener('click', resetFuncAndRandomizer);
 
+reset.addEventListener('click', () => {
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    if (randomNumber === 1) {
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    }
+});
+
 
 const DealOrNoDeal = (boxColor, neuePuffer) => {
-    boxColor == neuePuffer ? output.textContent = 'Richtig' : output.textContent = 'Falsch'
+    boxColor == neuePuffer ? output.textContent = 'Correct, are you a ROBOT? 🤖' : output.textContent = 'What is wrong with you? 🤪'
 }
 
 

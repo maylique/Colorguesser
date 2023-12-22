@@ -43,6 +43,7 @@ section {
     width: 5rem;
     border-radius: 1rem;
     box-shadow: 0 0 1rem black;
+    background-color: #fff;
 }
 
 button {

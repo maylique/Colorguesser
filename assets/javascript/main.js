@@ -1,24 +1,16 @@
 const rgbGuess = document.querySelector('#rgbVal')
 const colorBoxes = document.querySelectorAll('.boxes')
-
+const reset = document.querySelector('#reset')
 
 const colorRandomizer = () => {
-    let red = Math.floor((Math.random()) * 256 )+ 1
-    let green = Math.floor((Math.random()) * 256 )+ 1
-    let blue = Math.floor((Math.random()) * 256 )+ 1
-
-    let rgb = [red, green, blue]
-    return rgb
+    colorBoxes.forEach(box => {
+        let red = Math.floor((Math.random()) * 256 )+ 1
+        let green = Math.floor((Math.random()) * 256 )+ 1
+        let blue = Math.floor((Math.random()) * 256 )+ 1
+        box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+    })
 }
+colorRandomizer()
 
-console.log(colorBoxes);
-
-colorBoxes.forEach(box => {
-    let color = [colorRandomizer()]
-    let red = Math.floor((Math.random()) * 256 )+ 1
-    let green = Math.floor((Math.random()) * 256 )+ 1
-    let blue = Math.floor((Math.random()) * 256 )+ 1
-    console.log(color);
-    box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
-})
+reset.addEventListener('click', colorRandomizer)
 

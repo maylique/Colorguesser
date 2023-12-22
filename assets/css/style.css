@@ -22,7 +22,7 @@ body {
 
 main {
     background: linear-gradient(to top, rgb(57, 2, 47), rgb(18, 0, 48));
-    box-shadow: 0 0 5rem rgb(235, 3, 200);
+    box-shadow: 0 0 10rem rgb(235, 3, 200);
     border-radius: 1.5rem;
     padding: 2rem;
     display: flex;
@@ -31,6 +31,11 @@ main {
     align-items: center;
     gap: 2rem;
     text-shadow: 0 0 1rem #000;
+}
+
+span {
+    font-weight: normal;
+    font-size: 1rem;
 }
 
 section {
@@ -44,6 +49,7 @@ section {
     border-radius: 1rem;
     box-shadow: 0 0 1rem black;
     background-color: #fff;
+    cursor: pointer;
 }
 
 button {
@@ -54,6 +60,11 @@ button {
     border: none;
     outline: 1px solid rgb(252, 3, 161);
     cursor: pointer;
+    transition: .3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 h2 {

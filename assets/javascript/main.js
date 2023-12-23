@@ -100,15 +100,19 @@ const resetFuncAndRandomizer = () => {
 reset.addEventListener('click', resetFuncAndRandomizer);
 
 reset.addEventListener('click', () => {
-    const randomNumber = Math.floor(Math.random() * 13) + 1;
+    const randomNumber = Math.floor(Math.random() * 20) + 1;
     console.log(randomNumber);
-    if (randomNumber === 1) {
+    if (randomNumber < 3) {
         window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     } else if (randomNumber === 5) {
         window.location.href = 'https://www.youtube.com/watch?v=jhExvE5fvJw'
     } else if (randomNumber === 10) {
         window.location.href = 'https://www.youtube.com/watch?v=WOxNRbUYd1o'
-    } 
+    } else if (randomNumber === 12) {
+        window.location.href = 'https://www.youtube.com/watch?v=PPzIWFJU_3s'
+    } else if (randomNumber === 16) {
+        window.location.href = 'https://www.youtube.com/watch?v=BzkwB2knvz4'
+    }
 });
 
 

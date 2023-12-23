@@ -6,7 +6,7 @@ const headline = document.querySelectorAll('.boxh1')
 
 
 let puffer = []
-let neuePuffer = `rgb(${puffer.toString()})`
+let neuePuffer;
 let boxColor;
 
 // const colorRandomizer = () => {
@@ -45,10 +45,15 @@ const colorRandomizer = () => {
     let selectedRGB = guessVal[picker]
     neuePuffer = `rgb(${selectedRGB[0]}, ${selectedRGB[1]}, ${selectedRGB[2]})`
     rgbGuess.innerHTML = `<span style="color:rgb(${selectedRGB[0]},0,0);">${selectedRGB[0]}</span> <span style="color:rgb(0,${selectedRGB[1]},0);">${selectedRGB[1]}</span> <span style="color:rgb(0,0,${selectedRGB[2]});">${selectedRGB[2]}</span>`
+
 }
 
 colorRandomizer()
 
+const DealOrNoDeal = (boxColor, neuePuffer) => {
+    let newBox = boxColor.replace('rgb', '').replace('(', '').replace(')', '').replaceAll(',', '')
+    newBox == neuePuffer ? output.innerHTML = 'Correct, are you a <a href="https://www.youtube.com/watch?v=W4Rebo3aEkY">ROBOT?</a> 🤖' : output.textContent = 'What is wrong with you? 🤪';
+}
 
 
 // colorBoxes.forEach((box, index) => {
@@ -105,9 +110,7 @@ reset.addEventListener('click', () => {
 });
 
 
-const DealOrNoDeal = (boxColor, neuePuffer) => {
-    boxColor == neuePuffer ? output.innerHTML = 'Correct, are you a <a href="https://www.youtube.com/watch?v=W4Rebo3aEkY">ROBOT?</a> 🤖' : output.textContent = 'What is wrong with you? 🤪'
-}
+
 
 
 colorBoxes.forEach(box => {
@@ -117,19 +120,20 @@ colorBoxes.forEach(box => {
     })
 })
 
-// Funktion zum Erhöhen des Zählers
+counterZahl = document.querySelector('#counter')
+
 const increaseCounter = () => {
     let counter = localStorage.getItem('counter') || 0;
     counter = parseInt(counter) + 1;
     localStorage.setItem('counter', counter);
-  }
-  
-  // Funktion zum Anzeigen des Zählers
-  const displayCounter = () => {
+}
+    const displayCounter = () => {
     let counter = localStorage.getItem('counter') || 0;
-    document.querySelector('#counter').textContent = counter;
-  }
-  
-  // Aufruf der Funktionen
-  increaseCounter();
-  displayCounter();
+    if (counter == 1)
+    {counterZahl.textContent ='senk ju vor träwelling with the deutsche bahn for ' + counter + ' time.. uuuhm reload please ♥️';}
+    else {counterZahl.textContent ='Thank you for visiting my trash game for ' + counter + ' times  ♥️';}
+    }
+    
+    increaseCounter();
+    displayCounter();
+

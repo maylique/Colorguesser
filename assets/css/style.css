@@ -112,8 +112,10 @@ h1 span {
 
 #counter {
     justify-self: flex-end;
+    margin-top: 3rem;
 }
 
 .flex {
     display: flex;
+    flex-direction: row;
 }
